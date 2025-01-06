@@ -1,7 +1,9 @@
-// CountryList.tsx
+// components/CountryList/CountryList.tsx
 import { useQuery, gql } from "@apollo/client";
+import Link from "next/link";
 import styles from "./CountryList.module.css";
 import { Country } from "../../../../backend/src/entities/Country";
+
 // GraphQL query for fetching all countries
 const GET_COUNTRIES_QUERY = gql`
   query GetCountries {
@@ -39,12 +41,12 @@ export default function CountryList() {
         <tbody>
           {data.countries.map((country: Country) => (
             <tr key={country.id}>
-              <td>{country.name}</td>
+              <td>
+                <Link href={`/country/${country.id}`}>{country.name}</Link>
+              </td>
               <td>{country.code}</td>
               <td>{country.emoji}</td>
-              <td>
-                {country.continent ? country.continent.name : "No Continent"}
-              </td>
+              <td>{country.continent?.name}</td>
             </tr>
           ))}
         </tbody>

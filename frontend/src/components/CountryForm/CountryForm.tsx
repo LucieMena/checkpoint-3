@@ -13,6 +13,7 @@ const ADD_COUNTRY_MUTATION = gql`
       code
       continent {
         id
+        name
       }
     }
   }
@@ -91,7 +92,7 @@ export default function CountryForm() {
             name: formData.name,
             emoji: formData.emoji,
             code: formData.code,
-            continent: formData.continent, // Just pass the continent ID
+            continent: formData.continent,
           },
         },
       });
