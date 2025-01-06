@@ -1,0 +1,31 @@
+/* CountryList.module.css */
+.countryList {
+  padding: 20px;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.countryTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.countryTable th,
+.countryTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.countryTable th {
+  background-color: #f4f4f4;
+}
+
+.countryTable tr:hover {
+  background-color: #f9f9f9;
+}
